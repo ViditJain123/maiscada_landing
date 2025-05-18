@@ -17,7 +17,7 @@ export default function Team() {
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
             <div className="w-24 h-24 rounded-full border-4 border-white overflow-hidden bg-coolGray">
               <Image
-                src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                src="https://framerusercontent.com/images/8cwScfKRy8QaycBjJSWPz5ZMfPg.jpg?scale-down-to=1024"
                 alt="Tiya Jain"
                 width={96}
                 height={96}
