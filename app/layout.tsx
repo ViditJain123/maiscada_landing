@@ -30,7 +30,7 @@ export default function RootLayout({
         inter.className,
         spaceMono.variable,
         inter.variable,
-        "bg-coolGray"
+        "bg-creamBackground"
       )}>
         {children}
       </body>

@@ -11,8 +11,8 @@ interface SectionProps {
   bgColor?: string;
 }
 
-export default function Section({ id, title, children, bgColor = "bg-white" }: SectionProps) {
-  const textColor = bgColor.includes('darkNavy') ? 'text-white' : 'text-darkNavy';
+export default function Section({ id, title, children, bgColor = "bg-creamBackground" }: SectionProps) {
+  const textColor = bgColor.includes('darkNavy') ? 'text-lightCream' : 'text-darkText';
   
   return (
     <section 
@@ -26,7 +26,7 @@ export default function Section({ id, title, children, bgColor = "bg-white" }: S
         {title && (
           <motion.h2 
             className={cn(
-              "text-3xl md:text-4xl font-bold mb-12 text-center",
+              "text-3xl md:text-4xl lg:text-5xl font-bold mb-16 text-center",
               textColor
             )}
             initial={{ opacity: 0, y: 20 }}

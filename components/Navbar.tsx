@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { cn, scrollToSection } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import Logo from './Logo';
 
 const NavItem = ({
   href,
@@ -19,7 +20,7 @@ const NavItem = ({
   <li>
     <Link 
       href={href} 
-      className="text-coolGray hover:text-white transition-colors duration-200"
+      className="text-mediumText hover:text-darkText transition-colors duration-200 font-medium"
       onClick={(e) => {
         e.preventDefault();
         scrollToSection(href.substring(1));
@@ -51,7 +52,7 @@ export default function Navbar() {
     <motion.header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-darkNavy shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-lightCream/95 backdrop-blur-md shadow-lg py-2" : "bg-lightCream/80 backdrop-blur-sm py-4"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -59,34 +60,29 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="text-electricBlue font-bold text-2xl">
-            Maiscada
-          </div>
+          <Logo size="sm" />
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-8">
             <NavItem href="#problem" label="Problem" />
             <NavItem href="#solution" label="Solution" />
-            <NavItem href="#market" label="Market" />
-            <NavItem href="#team" label="Team" />
             <NavItem href="#enroll" label="Contact" />
+            <li>
+              <a 
+                href="mailto:f20230526@goa.bits-pilani.ac.in?subject=Maiscada Pilot Enrollment&body=Hi Tiya, I'm interested in joining the pilot program."
+                className="text-mediumText hover:text-darkText transition-colors duration-200 font-medium"
+              >
+                Become a Partner
+              </a>
+            </li>
           </ul>
         </nav>
 
-        <Button
-          className="hidden md:flex bg-safetyOrange text-white hover:bg-opacity-90"
-          asChild
-        >
-          <a href="mailto:f20230526@goa.bits-pilani.ac.in?subject=Maiscada Pilot Enrollment&body=Hi Tiya, I'm interested in joining the pilot program.">
-            Enroll for Pilot Program
-          </a>
-        </Button>
-
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-coolGray hover:text-white"
+          className="md:hidden text-mediumText hover:text-darkText"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -97,13 +93,13 @@ export default function Navbar() {
       {/* Mobile Navigation */}
       {isOpen && (
         <motion.div 
-          className="md:hidden bg-darkNavy"
+          className="md:hidden bg-lightCream/95 backdrop-blur-md border-t border-brandAccent/20"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <nav className="container mx-auto px-4 py-4">
+          <nav className="container mx-auto px-4 py-6">
             <ul className="flex flex-col space-y-4">
               <NavItem href="#problem" label="Problem" onClick={closeMenu} />
               <NavItem href="#solution" label="Solution" onClick={closeMenu} />
@@ -112,11 +108,11 @@ export default function Navbar() {
               <NavItem href="#enroll" label="Contact" onClick={closeMenu} />
               <li>
                 <Button
-                  className="w-full bg-safetyOrange text-white hover:bg-opacity-90"
+                  className="w-full bg-darkAccent text-lightCream hover:bg-brandAccent transition-all duration-300"
                   asChild
                 >
                   <a href="mailto:f20230526@goa.bits-pilani.ac.in?subject=Maiscada Pilot Enrollment&body=Hi Tiya, I'm interested in joining the pilot program.">
-                    Enroll for Pilot Program
+                    Become a Partner
                   </a>
                 </Button>
               </li>

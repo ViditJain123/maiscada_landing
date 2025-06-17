@@ -10,9 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        darkNavy: '#0C1C2C',
-        electricBlue: '#007AFF',
-        safetyOrange: '#FF6A00',
+        creamBackground: '#F5F2E8',
+        lightCream: '#FAF7F0',
+        darkText: '#2D2D2D',
+        mediumText: '#4A4A4A',
+        lightText: '#6B6B6B',
+        brandAccent: '#8B7355',
+        darkAccent: '#5D4E37',
         coolGray: '#F5F7FA',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

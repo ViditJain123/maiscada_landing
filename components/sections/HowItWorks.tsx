@@ -15,28 +15,28 @@ const TimelineItem = ({
   delay?: number;
 }) => (
   <motion.div 
-    className="relative pl-12 pb-10 border-l-2 border-gray-300 last:border-0"
+    className="relative pl-12 pb-10 border-l-2 border-brandAccent/30 last:border-0"
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.4, delay }}
   >
-    <div className="absolute left-[-11px] bg-white p-1 rounded-full">
+    <div className="absolute left-[-11px] bg-lightCream p-1 rounded-full border-2 border-brandAccent/30">
       {isAlert ? (
-        <AlertTriangle className="h-5 w-5 text-safetyOrange" />
+        <AlertTriangle className="h-5 w-5 text-brandAccent" />
       ) : (
-        <Terminal className="h-5 w-5 text-electricBlue" />
+        <Terminal className="h-5 w-5 text-darkAccent" />
       )}
     </div>
     
-    <div className="mb-3 font-mono text-sm bg-darkNavy text-coolGray p-3 rounded-md overflow-x-auto">
+    <div className="mb-3 font-mono text-sm bg-darkText text-lightCream p-3 rounded-md overflow-x-auto">
       &gt; {command}
     </div>
     
-    <div className="bg-white p-4 rounded-lg shadow border border-gray-100">
-      <p>{response}</p>
+    <div className="bg-lightCream p-4 rounded-lg shadow border border-brandAccent/20">
+      <p className="text-mediumText">{response}</p>
       {!isAlert && (
-        <div className="mt-4 flex items-center gap-2 text-sm text-green-600">
+        <div className="mt-4 flex items-center gap-2 text-sm text-darkAccent">
           <CheckCircle className="h-4 w-4" />
           <span>Safety confirmation: All systems operating within parameters</span>
         </div>
@@ -48,7 +48,7 @@ const TimelineItem = ({
 export default function HowItWorks() {
   return (
     <div className="max-w-3xl mx-auto">
-      <p className="text-center mb-12 max-w-2xl mx-auto">
+      <p className="text-center mb-12 max-w-2xl mx-auto text-mediumText text-lg leading-relaxed">
         Interact with Maiscada using natural language commands. The AI interprets your request, analyzes current data, and provides actionable insights or executes commands with built-in safety confirmations.
       </p>
       
